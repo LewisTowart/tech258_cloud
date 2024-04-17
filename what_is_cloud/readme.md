@@ -43,6 +43,7 @@ A private cloud is a cloud environment dedicated exclusively to a single organis
 Private cloud proves full control over the resources and infrastructure used. It offers enhanced security due to the resources not being shared. It also allows for customisation to meet you organisations specific needs.
 
 **How does it work**
+
 Organisations build and manage their private cloud infrastructure, either on-prem or through a managed hosting provider. They deploy virtualization technologies and cloud management tools to create a scalable and flexible environment for their workloads.
 
 **Public Cloud**
@@ -52,6 +53,7 @@ A public cloud is a cloud environment owned and operated by a third-party cloud 
 Public cloud offers virtually unlimited scalability and on demand resources. It's cost effective as most pricing models are pay as you go.
 
 **How does it work**
+
 Organisations leverage the infrastructure and services provided by public cloud providers like AWS, Azure, and GCP. They can deploy and manage applications, data, and services without the need for upfront investment in hardware or infrastructure.
 
 **Hybrid Cloud**
@@ -61,6 +63,7 @@ A hybrid cloud is a combination of public and private cloud environments that ar
 Offers flexibility working across both public and private clouds based on requirements. Scalable due to leveraging resources from both cloud types. Can allow the movement of data between public and private cloud spaces.
 
 **How does it work**
+
 Organisations integrate and orchestrate their public and private cloud environments using hybrid cloud management tools and technologies. They can run workloads in the most suitable environment based on factors such as performance, security, compliance, and cost.
 
 **Multi-Cloud**
@@ -70,6 +73,7 @@ A multi-cloud strategy involves using multiple cloud service providers to meet d
 Offers a broader range of cloud services providing different features. Distributes workload increasing resilience and mitigating certain risks. Can allow your organisation to optimise which cloud provider is used for what to save the most money.
 
 **How does it work**
+
 Organisations deploy and manage workloads across multiple cloud platforms simultaneously. They may use different providers for specific services or applications, such as using one provider for compute services and another for storage services.
 
 ### Types of cloud services: IaaS, PaaS, SaaS - What are differences?
@@ -87,6 +91,7 @@ PaaS provides a complete development and deployment environment in the cloud, al
 SaaS delivers software applications over the internet on a subscription basis, allowing users to access and use applications hosted in the cloud without the need for installation or maintenance.
 
 **Conclusion**
+
 In summary, IaaS provides virtualized infrastructure components, PaaS offers a development and deployment platform for applications and SaaS delivers complete software applications over the internet. The main differences lie in the level of abstraction, management responsibility, and scalability options provided by each type of cloud service. Organisations choose the appropriate service model based on their requirements, technical expertise, and desired level of control.
 
 ### What are the advantages/disadvantages of the cloud? (Particularly for a business)
@@ -95,7 +100,7 @@ In summary, IaaS provides virtualized infrastructure components, PaaS offers a d
 * Scalability: Cloud computing offers scalability, allowing businesses to quickly scale resources up or down based on demand.
 * Cost-Efficiency: Cloud computing operates on a pay-as-you-go or subscription-based pricing model, eliminating the need for upfront capital investment in hardware and infrastructure.
 * Flexibility: Cloud computing provides flexibility, allowing businesses to access resources and services from anywhere with an internet connection. 
-* Availability: Cloud service providers offer high levels of reliability and availability through redundant infrastructure, data replication, and failover mechanisms.
+* Availability: Cloud service providers offer high levels of reliability and availability through redundant infrastructure, data replication and failover mechanisms.
 * Security: Cloud providers invest heavily in security measures to protect data and infrastructure from cyber threats.
 
 **Disadvantages**

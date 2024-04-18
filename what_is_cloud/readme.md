@@ -149,18 +149,44 @@ Here are some examples to show how it may be more costly for a business:
 * An organisation may not be effectively utilising the resources they are paying a cloud provider for
 * There can be additional costs for transferring data to and from the cloud
 
+### Marketshare - What is the breakdown? 
 
-### Marketshare - What is the breakdown? Add a diagram to help understand marketshare trends
+The market share of the cloud environment is dominated by three big players these are:
+* AWS (Amazon) - Holding around 33% of the current market
+* Azure (Microsoft) - Holding around 21% of the current market
+* GCP (Google) - Holding about 10% of the current market
 
+The rest is broken down into the following:
+* Alibaba cloud - Holding 6% of the current market share
+* IBM cloud - Holding around 5% of the current market share
+* Other cloud providers like Oracle cloud and Salesforce Tencent cloud - Collectively holding the other 25% of the market
 
+![Market_share.png](Markdown_Images%2FMarket_share.png)
 
 ### What are the 3 largest Cloud providers known for (What makes them popular? What are some of their USPs?)
 
+As demonstrated in the previous section the three largest providers are Amazon, Microsoft and Goggle.
 
+**AWS**
+* Extensive Service Portfolio: AWS offers the most comprehensive set of cloud services, covering computing, storage, databases, machine learning, AI, analytics, IoT, security, and more.
+* Global Infrastructure: AWS has the largest global infrastructure footprint with data centers in multiple regions worldwide, providing low-latency access to cloud resources for businesses in different geographic locations.
+* Market Leader: AWS is the market leader in cloud computing, trusted by millions of customers, including startups, enterprises, and government agencies, due to its reliability, scalability, and security.
+
+**Azure**
+* Integrated with Microsoft Stack: Azure integrates seamlessly with Microsoft's ecosystem of products and services, including Windows Server, Active Directory, Office 365, and Visual Studio, making it an attractive choice for organizations already invested in Microsoft technologies.
+* Hybrid Cloud Capabilities: Azure offers robust hybrid cloud solutions, allowing businesses to seamlessly integrate on-premises infrastructure with the cloud, leveraging technologies like Azure Arc and Azure Stack for consistent management and deployment.
+* Enterprise Focus: Azure is well-suited for enterprise workloads, offering a range of services for mission-critical applications, compliance, governance, and industry-specific solutions across healthcare, finance, government, and more.
+
+**GCP**
+* Advanced Machine Learning: GCP is known for its expertise in AI and machine learning, offering cutting-edge tools and services like TensorFlow, AutoML, and BigQuery ML, enabling businesses to build intelligent applications and derive insights from data.
+* High-Performance Computing: GCP provides powerful computing resources for high-performance workloads, scientific computing, and data-intensive applications through services like Compute Engine, Kubernetes Engine, and Google Cloud Bigtable.
+* Data Analytics: GCP offers a robust suite of data analytics services, including BigQuery, Dataflow, Dataproc, and Data Studio, enabling businesses to analyze, process, and visualize large datasets in real-time.
 
 ### Which cloud provider do you think might be the best? Why?
 
+Deciding which cloud provider is the best can be a difficult questions to answer. From my personal learning I would say that it very much depends on th requirements of the organisation itself. Making a conclusive report on what you are actually wanting to use the cloud for and what it can achieve for you business.
 
+If I had to choose just one I think the safe option seems to be AWS. It holds most of the features that are provided by the other cloud services and holds the most market share. I think the well adopted use of AWS is important as it means there will more than likely be a much larger community available to troubleshoot any issues and bounce new ideas off.
 
 ### What sorts of things do you usually need to pay for when using the cloud?
 

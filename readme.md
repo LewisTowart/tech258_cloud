@@ -18,11 +18,15 @@ Now we are going to start the process of launching our instance. Navigate to the
 
 ![launch_instance.png](Markdown_Images%2Flaunch_instance.png)
 
+_A virtual machine (VM) is a software emulation of a physical computer that runs an operating system and applications. It operates within a virtualized environment created by a hypervisor, which partitions physical hardware resources, such as CPU, memory, and storage, among multiple VMs. VMs provide flexibility and efficiency by allowing multiple isolated instances to run on a single physical machine, enabling easier management, resource optimization, and scalability in computing environments._
+
 ### Step 4. Name and Image choice
 
 Here we are going to name our instance something appropriate such as tech258_lewis_task and then select the image we are looking to use in this example case that will be Ubuntu. It's important to know you can search for an image or select your own custom one.
 
 ![name_image.png](Markdown_Images%2Fname_image.png)
+
+_Machine images are pre-configured templates used to create virtual machines in cloud computing environments. They contain an operating system and necessary software, configurations, and settings, allowing users to deploy instances rapidly without manual installation. Machine images streamline provisioning, ensure consistency across deployments, and improve efficiency in cloud computing._
 
 ### Step 5. Instance type and Key pair
 
@@ -41,6 +45,10 @@ This is the part where you can set your network settings and edit your security 
 In the image below you can see what it looks like to create a new security group. Similar to before we want to follow an intelligent naming system I have gone with tech258_lewis_sg_task. You can also see I have added SSH and HTTP requests to be allowed to interact with the instance. The IP stating 0.0.0.0/0 essentially means that no specific IP is needed to access the instance. It can be accessed by anyone anywhere. You can change this to select IP addresses if you only one select PCs to be able to interact with the instance.
 
 ![security_new.png](Markdown_Images%2Fsecurity_new.png)
+
+_Ports are virtual endpoints used by networking protocols to enable communication between computers or applications. They act as doorways through which data can flow in and out of a system. Ports are identified by numeric values, typically ranging from 0 to 65535, and are associated with specific services or applications. For example, port 80 is commonly used for HTTP web traffic, while port 22 is used for SSH (Secure Shell) connections. Ports facilitate the routing and delivery of data packets across networks, allowing devices to communicate with each other efficiently and securely._
+
+_A security group is a virtual firewall that controls inbound and outbound traffic for instances or resources within a cloud computing environment. It acts as a barrier between the internet and the resources it protects, allowing administrators to define rules that permit or deny specific types of traffic based on factors such as IP addresses, protocols, and ports. Security groups provide an additional layer of security by restricting access to resources and helping to prevent unauthorized access, malicious attacks, and data breaches. They are a fundamental component of cloud security and are used to enforce network security policies and protect sensitive data in cloud environments._
 
 ### Step 7. Final checks
 

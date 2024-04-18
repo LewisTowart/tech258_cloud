@@ -190,8 +190,35 @@ If I had to choose just one I think the safe option seems to be AWS. It holds mo
 
 ### What sorts of things do you usually need to pay for when using the cloud?
 
+There are many different areas you may need to pay for when using cloud services but this is very much dependent on exactly what you are using them for.
 
+Here are some examples:
+* Storage - storing any data within the cloud
+* Data Transfer - Transferring data between different regions or between systems
+* Compute resources - Any virtual machines you're using and other compute resources that you deploy and use to run your applications 
+* Support plans - Providers offer different support packages with different response times
+* Additional resources - These providers also offer developer tools for example which an organisation may pay for
 
 ### What are the 4 pillars of DevOps? How do they link into the Cloud?
+
+The pillars of DevOps are closely related with cloud computing, as cloud platforms provide the technological infrastructure and tools that enable teams to embrace DevOps practices and principles, collaborate effectively, automate processes, measure performance, and share knowledge to deliver value to customers faster and more efficiently.
+
+**Culture**
+
+Encouraging collaboration, trust, and shared responsibility among development, operations, and other teams. A positive culture fosters teamwork, communication, and a focus on common goals, which are essential for successful DevOps implementation.
+
+**Automation**
+
+Using automation tools and practices to streamline and accelerate development, testing, deployment, and operations processes. Automation reduces manual effort, improves consistency, and enables teams to deliver software faster and with fewer errors.
+
+**Measurement**
+
+Collecting and analyzing data to measure performance, track progress, and identify areas for improvement. Measurement enables data-driven decision-making, continuous feedback loops, and iterative improvements, driving greater efficiency and effectiveness in DevOps practices.
+
+**Sharing**
+
+Promoting knowledge sharing, collaboration, and transparency across teams and organizations. Sharing best practices, lessons learned, and insights helps teams learn from each other, avoid silos, and accelerate innovation and improvement in DevOps initiatives.
+
+
 
 

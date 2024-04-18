@@ -14,13 +14,13 @@ Using the search bar look up EC2 and make sure you are on the landing page.
 
 ### Step 3. Launch Instance
 
-Now we are going to start the process of launching our instance. Navigate to the launch istance button as seen below.
+Now we are going to start the process of launching our instance. Navigate to the launch instance button as seen below.
 
 ![launch_instance.png](Markdown_Images%2Flaunch_instance.png)
 
 ### Step 4. Name and Image choice
 
-Here we are going to name our instance something appropriate such as tech258_lewis_task and then select the image we are looking to use in this example case that will be Ubuntu. It's important to not you can search for an image or select your own custom one.
+Here we are going to name our instance something appropriate such as tech258_lewis_task and then select the image we are looking to use in this example case that will be Ubuntu. It's important to know you can search for an image or select your own custom one.
 
 ![name_image.png](Markdown_Images%2Fname_image.png)
 
@@ -34,7 +34,7 @@ After you can see Key pair. This is referencing access to the instance using a p
 
 ### Step 6. Network Settings
 
-This is the part where you can set your network settings and edit your security groups for the firewall. This shows what can access the instance such as SSH or HTTP requests. These can be created which I will also show below but for us we can use our previously created group tech258_lewis_basic_sg.
+This is the part where you can set your network settings and edit your security groups for the firewall. This shows what can access the instance such as SSH or HTTP requests. These can be created which I will also show below but for us, we can use our previously created group tech258_lewis_basic_sg.
 
 ![network_previous.png](Markdown_Images%2Fnetwork_previous.png)
 
@@ -70,31 +70,31 @@ AWS is going to kindly now show us all the commands that we will enter into git 
 
 We are now going to open git bash and work our way through the commands explaining each one as we go.
 
-First we need to locate and navigate to our .ssh folder where our private key is located to be granted access to our instance. We are using the cd command to take us back to a base directory ~ where .ssh is located. Then we are using cd .ssh to go into the folder.
+First we need to locate and navigate to our .ssh folder where our private key is located to be granted access to our instance. We are using the **cd** command to take us back to a base directory ~ where .ssh is located. Then we are using **cd .ssh** to go into the folder.
 
 ![locate_ssh.png](Markdown_Images%2Flocate_ssh.png)
 
-Next we run the chmod 400 "tech258.pem" as a security check to make sure our private key isn't publicly viewable. Then after we run the ssh -i "tech258.pem" ubuntu@ec2-3-249-76-242.eu-west-1.compute.amazonaws.com command which is using our private key to access our instance which we will now be able to use.
+Next we run the **chmod 400 "tech258.pem"** command as a security check to make sure our private key isn't publicly viewable. Then after we run the **ssh -i "tech258.pem" ubuntu@ec2-3-249-76-242.eu-west-1.compute.amazonaws.com** command which is using our private key to access our instance which we will now be able to use.
 
 ![access_instance.png](Markdown_Images%2Faccess_instance.png)
 
 ### Step 10. Updating and Upgrading packages
 
-Next we are going to run the sudo apt update -y command to get any update to our current package and download them. sudo stands for super user do which gives a high level of permissions. The -y stands for yes as this command without it would ask if we are sure, automating this and skipping the step.
+Next we are going to run the **sudo apt update -y** command to get any update to our current package and download them. sudo stands for super user do which gives a high level of permissions. The -y stands for yes as this command without it would ask if we are sure, automating this and skipping the step.
 
 ![sudo_update.png](Markdown_Images%2Fsudo_update.png)
 
-Now we are going to run the command sudo apt upgrade -y which now installs the updated packages we have just downloaded.
+Now we are going to run the command **sudo apt upgrade -y** which now installs the updated packages we have just downloaded.
 
 ![sudo_upgrade.png](Markdown_Images%2Fsudo_upgrade.png)
 
 ### Step 11. Installing Nginx and Deploying our Webpage
 
-We are now able to use the command *sudo apt install nginx -y* to install nginx which allows us to deploy a webpage.
+We are now able to use the command **sudo apt install nginx -y** to install nginx which allows us to deploy a webpage.
 
 ![sudo_nginx.png](Markdown_Images%2Fsudo_nginx.png)
 
-The command *systemctl status nginx* lets us check the status of our newly deployed webpage. You can press Q to return to the usual input section of the terminal.
+The command **systemctl status nginx** lets us check the status of our newly deployed webpage. You can press Q to return to the usual input section of the terminal.
 
 ![nginx_status.png](Markdown_Images%2Fnginx_status.png)
 

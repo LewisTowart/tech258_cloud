@@ -196,7 +196,7 @@ If I had to choose just one I think the safe option seems to be AWS. It holds mo
 There are many different areas you may need to pay for when using cloud services but this is very much dependent on exactly what you are using them for.
 
 Here are some examples:
-* Storage - storing any data within the cloud
+* Storage - Storing any data within the cloud
 * Data Transfer - Transferring data between different regions or between systems
 * Compute resources - Any virtual machines you're using and other compute resources that you deploy and use to run your applications 
 * Support plans - Providers offer different support packages with different response times

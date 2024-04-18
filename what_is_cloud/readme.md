@@ -143,7 +143,7 @@ To summarise, OpEx refers to ongoing operational expenses incurred for day-to-da
 
 ### Is migrating to the cloud always cheaper?
 
-The short answer is No. The answer of is it cheaper will be specific to each organisation's current state and requirements.
+The short answer is No. The answer of, is it cheaper will be specific to each organisation's current state and requirements.
 
 Here are some examples to show how it may be more costly for a business:
 * The business may have already heavily invested in their infrastructure
@@ -187,7 +187,7 @@ As demonstrated in the previous section the three largest providers are Amazon, 
 
 ### Which cloud provider do you think might be the best? Why?
 
-Deciding which cloud provider is the best can be a difficult questions to answer. From my personal learning I would say that it very much depends on th requirements of the organisation itself. Making a conclusive report on what you are actually wanting to use the cloud for and what it can achieve for you business.
+Deciding which cloud provider is the best can be a difficult questions to answer. From my personal learning I would say that it very much depends on the requirements of the organisation itself. Making a conclusive report on what you are actually wanting to use the cloud for and what it can achieve for your business.
 
 If I had to choose just one I think the safe option seems to be AWS. It holds most of the features that are provided by the other cloud services and holds the most market share. I think the well adopted use of AWS is important as it means there will more than likely be a much larger community available to troubleshoot any issues and bounce new ideas off.
 

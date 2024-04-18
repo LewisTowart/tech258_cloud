@@ -78,6 +78,8 @@ Organisations deploy and manage workloads across multiple cloud platforms simult
 
 ### Types of cloud services: IaaS, PaaS, SaaS - What are differences?
 
+![service_types.png](Markdown_Images%2Fservice_types.png)
+
 **Infrastructure as a Service (IaaS)**
 
 IaaS provides virtualized computing resources over the internet, allowing users to access and manage infrastructure components such as virtual machines, storage, and networking.
@@ -134,6 +136,7 @@ This could be:
 * Tech Investments
 
 **Relation to the Cloud?**
+
 Businesses typically incur OpEx for cloud services on a subscription basis, while CapEx may be involved in initial setup, migration, or certain investments related to cloud infrastructure and development.
 
 To summarise, OpEx refers to ongoing operational expenses incurred for day-to-day business operations, while CapEx refers to investments in assets that provide long-term value.

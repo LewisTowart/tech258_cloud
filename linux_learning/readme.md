@@ -199,7 +199,10 @@ sudo systemctl enable (process_name)
 ### Varibales and Environment Variables
 
 Variables are your common small scope option that can be used from the directory/space they are located in or by referencing it's path.
+
 Environment variables are on a larger scope and can be ran from anywhere no matter what directory you're located in.
+
+Remember capitalisation is important!
 
 ```
 printenv
@@ -207,8 +210,12 @@ printenv
 * This command shows you the current list of environment variables
 
 ```
-(variable_name)=(value coule be a number or a strong etc.)
+(variable_name)=(value could be a number or a string etc.)
+echo (variable_name)
 ```
 * This command will create a variable name and store the data you decide within it
+* echo allows you to use/access your variable
+
+
 
 

@@ -77,3 +77,10 @@ echo finished checking node version
 
 ### Step 8.
 
+From Git Hub we need to clone our repository that our app code is in as seen by the command below.
+
+```
+echo getting app folder
+git clone https://github.com/LewisTowart/tech258-sparta-test-app.git
+echo got app folder
+```

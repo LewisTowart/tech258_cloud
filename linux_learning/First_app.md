@@ -20,8 +20,6 @@ Its important to follow the below code when automating so that the script can sk
 
 ```
 echo upgrade packages...
-# fix this command asks for user input
-# pending kernal upgrade
 sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
 echo done!
 ```
@@ -31,3 +29,51 @@ echo done!
 Next we are going to install nginx with similar code to step two avoiding having to take a user input for the purple kernal update box.
 
 ```
+echo installing nginx
+sudo DEBIAN_FRONTEND=noninteractive apt install nginx -y
+echo finished installing nginx
+```
+
+### Step 4.
+
+Now we need to restart nginx so that the new config can be updated
+
+```
+echo restarting nginx
+sudo systemctl restart nginx
+echo finished restarting nginx
+```
+
+### Step 5.
+
+Here we are enabling nginx so that it will be ready to go each time in the instance
+
+```
+echo enabling nginx
+sudo systemctl enable nginx
+echo finished enabling nginx
+```
+
+### Step 6.
+
+We are now installing the correct node.js version
+
+```
+echo installing nodejs v20
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo DEBIAN_FRONTEND=noninteractive -E bash - &&\
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
+echo finished installing nodejs v20
+```
+
+### Step 7.
+
+The command below can be used to make sure we got the correct node version and it has installed
+
+```
+echo checking node version
+node -v
+echo finished checking node version
+```
+
+### Step 8.
+

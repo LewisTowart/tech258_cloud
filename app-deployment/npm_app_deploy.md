@@ -12,7 +12,8 @@ echo installing nginx
 sudo DEBIAN_FRONTEND=noninteractive apt install nginx -y
 echo finished installing nginx
 
-# configure reverse proxy
+# configure reverse proxy # sudo nano /etc/nginx/sites-available/myapp.conf
+sudo sed -i '50s/.*/\t  proxy_pass http:\/\/176.34.208.201:3000;/' /etc/nginx/sites-enabled/default
 # changing a config file
 
 echo restarting nginx
@@ -33,20 +34,20 @@ node -v
 echo finished checking node version
 
 # set db_host env var
-export DB_HOST=mongodb://172.31.61.81:27017/posts # Private IP goes in there for the database
-
+export DB_HOST=mongodb://172.31.49.32:27017/posts 
+# Private IP goes in there for the database
 echo getting app folder
-git clone https://github.com/LewisTowart/tech258_sparta_test_app.git
+git clone https://github.com/LewisTowart/tech258-sparta-test-app.git
 echo got app folder
 
 echo going to app folder
-cd ~/tech258_sparta_test_app/app
+cd ~/tech258-sparta-test-app/app
 echo in app folder
 
 echo installing app
-npm install
+sudo npm install
 echo finished installing app
 
 echo running app
-npm start 
+sudo npm start 
 echo done

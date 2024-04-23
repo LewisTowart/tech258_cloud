@@ -111,7 +111,7 @@ Here we will make sure that we are in the correct directory for the app code tha
 
 ```
 echo going to app folder
-cd ~/tech258_sparta_test_app/app
+cd ~/tech258-sparta-test-app/app
 echo in app folder
 ```
 

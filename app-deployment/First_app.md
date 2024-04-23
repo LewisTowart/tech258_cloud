@@ -1,6 +1,26 @@
-# Deploying my first App
+# Deploying An App
 
-We are creating a script to automate the deployment of an app.
+We are creating a script to automate the deployment of an app. To note all the echo commands are what will be printed to the terminal as the script progresses.
+
+## Making a Script
+
+### Step 1.
+
+First we are making a file that can house the script we are going to be making. This file need to end in .sh which makes it a shell script that can be ran. The nano creates the file and allows us to edit the contents. This is where we need to type/paste our full script.
+
+```
+nano name.sh
+```
+
+### Step 2.
+
+Now all you need to do is run the script by typing out the name within it's directory.
+
+```
+name.sh
+```
+
+## Full Process
 
 ### Step 1.
 
@@ -83,4 +103,54 @@ From Git Hub we need to clone our repository that our app code is in as seen by 
 echo getting app folder
 git clone https://github.com/LewisTowart/tech258-sparta-test-app.git
 echo got app folder
+```
+
+### Step 9.
+
+Here we will make sure that we are in the correct directory for the app code that we have just cloned in.
+
+```
+echo going to app folder
+cd ~/tech258_sparta_test_app/app
+echo in app folder
+```
+
+### Step 10.
+
+Next we will install npm
+
+```
+echo installing app
+npm install
+echo finished installing app
+```
+
+### Step 11.
+
+Then we need to install the process manager.
+
+```
+echo installing pm2
+sudo npm install -g pm2
+echo pm2 installed
+```
+
+### Step 12.
+
+To make sure the script runs everytime with no issue we will stop processes here
+
+```
+echo stop all processes
+sudo pm2 stop all #app instead of all
+echo
+```
+
+### Step 13.
+
+Finally we are going to run our app
+
+```
+echo running app
+pm2 start node app.js # app after
+echo done
 ```

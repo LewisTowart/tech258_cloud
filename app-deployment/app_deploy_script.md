@@ -13,8 +13,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt install nginx -y
 echo finished installing nginx
 
 # configure reverse proxy
-sudo sed -i '50s/.*/\t  proxy_pass http:\/\/176.34.208.201:3000;/' /etc/nginx/sites-enabled/default
-# changing a config file
+sudo sed -i '51s/.*/\t        proxy_pass http:\/\/localhost:3000;/' /etc/nginx/sites-enabled/default
+# changing a config file, replacing line 51 the local host address
 
 echo restarting nginx
 sudo systemctl restart nginx
@@ -34,8 +34,9 @@ node -v
 echo finished checking node version
 
 # set db_host env var
-export DB_HOST=mongodb://172.31.49.32:27017/posts 
+export DB_HOST=mongodb://172.31.43.234:27017/posts 
 # Private IP goes in there for the database
+# So the app can communicate with the data base specifically using my private IP for my Database, end point to connect to the database
 
 echo getting app folder
 git clone https://github.com/LewisTowart/tech258-sparta-test-app.git

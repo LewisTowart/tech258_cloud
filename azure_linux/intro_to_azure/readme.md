@@ -40,6 +40,8 @@ These are just some of the basic concepts of Azure. It's a vast platform with ma
 
 ### Azure regions and how they work
 
+![alt text](Markdown_Images/azure_map.png)
+
 Azure regions are geographic locations where Azure data centers are located. Each region is made up of one or more data centers that are connected by a low-latency network. These regions are distributed around the world to provide customers with options for deploying their applications and data closer to their users.
 
 Within each region, Azure offers availability zones. Availability zones are unique physical locations within an Azure region, with independent power, cooling, and networking. They are designed to provide fault tolerance and high availability for applications and data by distributing them across multiple zones within a region. This helps to ensure resilience against failures, such as hardware failures or natural disasters, as applications can be deployed across different zones to minimize the impact of such events.

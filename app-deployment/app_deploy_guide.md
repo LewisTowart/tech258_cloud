@@ -2,6 +2,8 @@
 
 We are creating a script to automate the deployment of an app. To note all the echo commands are what will be printed to the terminal as the script progresses.
 
+:boom: If you are doing a two tier deployment keep in assigning the enivronment variable DB_HOST and setup the database first with the database_deploy_guide. If you are just deploying the app you don't have to assign an environment variable.
+
 ## Making a Script
 
 ### Step 1.
@@ -18,6 +20,13 @@ Now all you need to do is run the script by typing out the name within it's dire
 
 ```
 name.sh
+```
+### Step 3.
+
+To run the script you can use the below command.
+
+```
+bash name.sh
 ```
 
 ## Full Process

@@ -1,6 +1,8 @@
 # Deploying a Database
 
-We are creating a script to automate the deployment of a database. 
+We are creating a script to automate the deployment of a database.
+
+:boom: Make sure to follow this guide to completion before deploying the app as you will need the private IP that is generated here to reference within that guide. For more information on deploying the app look at the document app_deploy_guide.
 
 ## Making a Script
 
@@ -20,6 +22,14 @@ Now all you need to do is run the script by typing out the name within it's dire
 name.sh
 ```
 
+### Step 3.
+
+To run the script you can use the below command.
+
+```
+bash name.sh
+```
+
 ## Full Process
 
 ### Step 1.
@@ -36,7 +46,7 @@ echo done!
 
 Now we need to upgrade the list of pacakges installing the newly downloaded updates.
 
-Its important to follow the below code when automating so that the script can skip the user input step.
+Its important to follow the below code when automating so that the script can skip the user input step using DEBIAN_FRONTEND=noninteractive.
 
 ```
 echo upgrade packages...
@@ -46,7 +56,11 @@ echo done!
 
 ### Step 3.
 
-Next we are going to install mongodb. (break this down when have time)
+Next we are going to install mongodb.
+
+It's important to note this specific code is to get the 7.0.6 version of Mongodb.
+
+The # section is optional and essentially is responsible for stopping those packages being updated from our 7.0.6 version.
 
 ```
 sudo apt-get install gnupg curl
@@ -62,17 +76,17 @@ sudo apt-get update
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y mongodb-org=7.0.6 mongodb-org-database=7.0.6 mongodb-org-server=7.0.6 mongodb-mongosh=2.2.4 mongodb-org-mongos=7.0.6 mongodb-org-tools=7.0.6
 
-echo "mongodb-org hold" | sudo dpkg --set-selections
-echo "mongodb-org-database hold" | sudo dpkg --set-selections
-echo "mongodb-org-server hold" | sudo dpkg --set-selections
-echo "mongodb-mongosh hold" | sudo dpkg --set-selections
-echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
-echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+# echo "mongodb-org hold" | sudo dpkg --set-selections
+# echo "mongodb-org-database hold" | sudo dpkg --set-selections
+# echo "mongodb-org-server hold" | sudo dpkg --set-selections
+# echo "mongodb-mongosh hold" | sudo dpkg --set-selections
+#  echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+# echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 ```
 
 ### Step 4.
 
-Change the bind IP to anywhere
+Change the bind IP to 0.0.0.0 which allows the database to be accessed from any device.
 ```
 sudo sed -i 's/bindIp: 127.0.0.1/bindIp: 0.0.0.0/' /etc/mongod.conf
 ```

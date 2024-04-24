@@ -70,7 +70,7 @@ Here we are adding a reverse proxy this makes it so that if you go to the puclic
 ```
 # configure reverse proxy
 sudo sed -i '51s/.*/\t        proxy_pass http:\/\/localhost:3000;/' /etc/nginx/sites-enabled/default
-# changing a config file, replacing line 51 the local host address
+# changing a config file, replacing line 51 with the local host address
 ```
 
 Now we need to restart nginx so that the new config can be updated

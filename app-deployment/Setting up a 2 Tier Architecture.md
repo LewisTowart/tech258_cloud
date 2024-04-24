@@ -40,7 +40,7 @@ Overall, two-tier architecture provides a basic yet effective separation of conc
 
 ### Deploying 2 Tier Architecture Outcome
 
-Using both my database.md script and my app_deploy_script.md I have successfully lauched both my database tier and my app tier.
+Following both my database_deploy_guide and my app_deploy_guide I have successfully launched both my database tier and my app tier.
 
 Some important steps to not miss following this:
 

@@ -56,6 +56,14 @@ echo finished installing nginx
 
 ### Step 4.
 
+Here we are adding a reverse proxy this makes it so that if you go to the puclic IP it takes you to port 3000 straight away
+
+```
+# configure reverse proxy
+sudo sed -i '51s/.*/\t        proxy_pass http:\/\/localhost:3000;/' /etc/nginx/sites-enabled/default
+# changing a config file, replacing line 51 the local host address
+```
+
 Now we need to restart nginx so that the new config can be updated
 
 ```
@@ -86,6 +94,15 @@ echo finished installing nodejs v20
 ```
 
 ### Step 7.
+
+Now we need to set an evironment variable with the private IP of our database in the IP area. This is connecting our app to our data base.
+
+```
+# set db_host env var
+export DB_HOST=mongodb://172.31.43.234:27017/posts 
+# Private IP goes in there for the database
+# So the app can communicate with the data base specifically using my private IP for my Database, end point to connect to the database
+```
 
 The command below can be used to make sure we got the correct node version and it has installed
 

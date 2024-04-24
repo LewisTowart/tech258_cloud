@@ -51,7 +51,7 @@ It's very easy to forget these steps and you won't be able to access the databas
 
 Potential Blockers:
 
-* If the scipt is exited for whatever reason the DB_HOST environment variable will need to be set again as you have excited the shell script you were in so the variable no longer exists.
+* If the script is exited for whatever reason the DB_HOST environment variable will need to be set again as you have excited the shell script you were in so the variable no longer exists.
 * As mentioned before make sure to change the IP address in the script and that the Database instance has loaded successfully.
 
 What I've learnt:

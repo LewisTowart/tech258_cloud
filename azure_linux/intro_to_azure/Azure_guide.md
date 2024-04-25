@@ -2,7 +2,7 @@
 
 ### Pairing a SSH key
 
-:Boom: Please follow https://github.com/LewisTowart/tech258_git/blob/main/ssh_keys_setup.md to generate the new key pair
+:boom: Please follow https://github.com/LewisTowart/tech258_git/blob/main/ssh_keys_setup.md to generate the new key pair
 
 ### Step 1.
 
@@ -34,7 +34,7 @@ Keep the subscription as Azure Training and select the tech258 resource group.
 
 ![alt text](Markdown_Images/network_resource.PNG)
 
-For the instance details name the network tech258-Lewis-2-subnet-vnet :Boom: Make sure you are on (Europe) UK South.
+For the instance details name the network tech258-Lewis-2-subnet-vnet :boom: Make sure you are on (Europe) UK South.
 
 ![alt text](Markdown_Images/instance_net_deets.PNG)
 
@@ -156,19 +156,19 @@ Make sure to double check all settings are correct before clicking create at the
 
 ### Step 1.
 
-:Boom: Please follow the same step as listed above for the Database setup.
+:boom: Please follow the same step as listed above for the Database setup.
 
 ### Step 2.
 
-:Boom: Please follow the same step as listed above for the Database setup making sure to name it something like tech258-lewis-app-deploy this time.
+:boom: Please follow the same step as listed above for the Database setup making sure to name it something like tech258-lewis-app-deploy this time.
 
 ### Step 3.
 
-:Boom: Please follow the same step as listed above for the Database setup.
+:boom: Please follow the same step as listed above for the Database setup.
 
 ### Step 4.
 
-:Boom: Please follow the same step as listed above for the Database setup.
+:boom: Please follow the same step as listed above for the Database setup.
 
 ### Step 5.
 
@@ -200,17 +200,19 @@ We need to do this one more time for HTTP. Click add an inbound rule and this ti
 
 ### Step 7.
 
-:Boom: Please follow the same step as listed above for the Database setup.
+:boom: Please follow the same step as listed above for the Database setup.
 
 ### Step 8.
 
-:Boom: Please follow the same step as listed above for the Database setup.
+:boom: Please follow the same step as listed above for the Database setup.
 
 ### Differences to AWS
 
 On Azure our Network virtual machine needed to be created by us indivdually for our VM instances whereas on AWS it was already done for us.
 
 Mongodb doesn't need to have it's port 27017 referenced on Azure where as on AWS we needed to add it to the security group.
+
+The public ips we set within the Network VM stay the same in AWS they always changed.
 
 
 

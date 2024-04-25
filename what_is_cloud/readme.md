@@ -1,5 +1,21 @@
 # Cloud
 
+- [Cloud](#cloud)
+    - [What is cloud computing?](#what-is-cloud-computing)
+      - [So what does this really mean?](#so-what-does-this-really-mean)
+    - [How do we know if something is in the cloud? Differences between on-prem and the cloud?](#how-do-we-know-if-something-is-in-the-cloud-differences-between-on-prem-and-the-cloud)
+    - [The 4 deployment models of cloud: private vs public vs hybrid vs multi-cloud](#the-4-deployment-models-of-cloud-private-vs-public-vs-hybrid-vs-multi-cloud)
+    - [Types of cloud services: IaaS, PaaS, SaaS - What are differences?](#types-of-cloud-services-iaas-paas-saas---what-are-differences)
+    - [What are the advantages/disadvantages of the cloud? (Particularly for a business)](#what-are-the-advantagesdisadvantages-of-the-cloud-particularly-for-a-business)
+    - [Difference between OpEx vs CapEx and how it relates the cloud](#difference-between-opex-vs-capex-and-how-it-relates-the-cloud)
+    - [Is migrating to the cloud always cheaper?](#is-migrating-to-the-cloud-always-cheaper)
+    - [Marketshare - What is the breakdown?](#marketshare---what-is-the-breakdown)
+    - [What are the 3 largest Cloud providers known for (What makes them popular? What are some of their USPs?)](#what-are-the-3-largest-cloud-providers-known-for-what-makes-them-popular-what-are-some-of-their-usps)
+    - [Which cloud provider do you think might be the best? Why?](#which-cloud-provider-do-you-think-might-be-the-best-why)
+    - [What sorts of things do you usually need to pay for when using the cloud?](#what-sorts-of-things-do-you-usually-need-to-pay-for-when-using-the-cloud)
+    - [What are the 4 pillars of DevOps? How do they link into the Cloud?](#what-are-the-4-pillars-of-devops-how-do-they-link-into-the-cloud)
+
+
 ### What is cloud computing? 
 
 Simply put, cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence over the Internet.

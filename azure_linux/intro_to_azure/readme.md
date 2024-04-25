@@ -68,6 +68,22 @@ Azure is structured and organized in several layers, each serving different purp
 
 Overall, Azure's structure is designed to provide a scalable, reliable, and globally distributed cloud platform that meets the diverse needs of businesses and developers around the world.
 
+![alt text](Markdown_Images/azure_resources.png)
+
+* Whatever you create in terms of resources possibly an instance or virtual network, these need to be grouped into a resource groups.
+
+These groups are like containers, every resource group has to be associated with a particular subscription.
+
+* A subscription is like a payment account every subscription you have to pay in a certain way linked to a certain card. 
+ 
+You can have different types of subscription such as student subscription, trial subscription, pay as you go subscription.
+
+Every subscription has limits and quotas such as you can have 50 of the same size VM in a single region for one subscription. You wouldn't be able to make more than 50 as you will receieve an error. You could then  use a different size VM, change region or get another subscription. 
+
+* Management groups e.g the root management group (azure AD/entra tenent)- stores users, groups and policies, you can organise your subscriptions into different management groups.
+ 
+These management groups are like folders, you can have them inside each other up to 6 levels not including the root. They are all considered different scopes for each level you can set different access permissions and policies. For example have been set to a resource group that lets us create, see and manage those specific resources.
+
 ### What types of services does Azure provide?
 
 Azure provides a vast array of services across various categories to cater to different needs and use cases. Here's an overview of the types of services Azure offers:

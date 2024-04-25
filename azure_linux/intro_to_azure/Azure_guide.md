@@ -214,5 +214,15 @@ Mongodb doesn't need to have it's port 27017 referenced on Azure where as on AWS
 
 The public ips we set within the Network VM stay the same in AWS they always changed.
 
+Removing instance have to delete the disk, IP address and NIC for each VM
+
+Mongodb?
+
+Azure automatically opens port 27017 for MongoDB when you deploy a MongoDB instance using Azure's services. This means that you don't need to manually configure the security group to allow traffic on port 27017; it's handled by Azure's platform.
+
+On the other hand, in AWS, you typically need to manually configure security groups to allow traffic to specific ports. This includes opening port 27017 for MongoDB if you're running it on an EC2 instance. AWS doesn't automatically open this port for you, so you would need to explicitly configure the security group to allow incoming connections on port 27017.
+
+In summary, the difference in configuration requirements between Azure and AWS for MongoDB's port 27017 is due to the different default networking setups and policies of each cloud provider. Azure handles this automatically, while AWS requires manual configuration.
+
 
 

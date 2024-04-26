@@ -156,19 +156,6 @@ This behavior is common across cloud platforms like Azure and AWS when creating 
 
 ### The little bit of user data needed to get the app running with the posts page (and what can be commented out if you don't need the posts page to work)
 
-If you're creating an image of a virtual machine (VM) on Azure and you want to ensure that the application runs smoothly after deploying instances from that image, you typically need to include some minimal user data. This data might include:
+The script above is what is needed to add into the user data section.
 
-1. **Application Configuration**: Basic configuration settings required for the application to function correctly. This could include database connection strings, API keys, environment variables, etc.
-
-2. **Startup Scripts**: Scripts or commands needed to initialize the application or perform any necessary setup tasks upon VM deployment. For example, if your application requires certain services to be started or specific directories to be created, you would include these instructions in the startup script.
-
-3. **Dependency Installation**: Commands to install any dependencies or packages required by the application to run. This ensures that the necessary software components are installed and configured correctly on the VM.
-
-Regarding the "posts page" functionality, if it's not essential for the application to work, you can comment out or exclude any code related to the posts page in your startup script or application configuration. This might include:
-
-- Database migrations or seeding related to posts (if applicable).
-- Routes, controllers, and views associated with the posts page.
-- Any additional JavaScript, CSS, or HTML specific to the posts functionality.
-
-By commenting out or excluding this code, you can streamline the deployment process and reduce unnecessary overhead. However, make sure to test the application thoroughly after making these changes to ensure that it still functions as expected without the posts page functionality.
-
+If you are looking to just get the app working but not the posts page you can comment out the part that sets the environment variable to remove the connection between the two instances.

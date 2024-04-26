@@ -212,17 +212,21 @@ On Azure our Network virtual machine needed to be created by us indivdually for 
 
 Mongodb doesn't need to have it's port 27017 referenced on Azure where as on AWS we needed to add it to the security group.
 
-The public ips we set within the Network VM stay the same in AWS they always changed.
+The IPs we set within the Network VM are static and stay the same in AWS they always changed when the instance was stopped and started again.
 
-Removing instance have to delete the disk, IP address and NIC for each VM
+When removing the instance you have to delete the disk, IP address and NIC for each VM whereas while these are also seperate on AWS you don't have that control and just terminate the instance intself.
 
-Mongodb?
+You can set tags on Azure which is a great way of reference things such as the owner of the instance.
 
-Azure automatically opens port 27017 for MongoDB when you deploy a MongoDB instance using Azure's services. This means that you don't need to manually configure the security group to allow traffic on port 27017; it's handled by Azure's platform.
+When you SSH into your instance the title of the git bash window is the same as the one you set for your instance which is really helpful keeping track of you windows.
 
-On the other hand, in AWS, you typically need to manually configure security groups to allow traffic to specific ports. This includes opening port 27017 for MongoDB if you're running it on an EC2 instance. AWS doesn't automatically open this port for you, so you would need to explicitly configure the security group to allow incoming connections on port 27017.
+### MongoDB open port azure
 
-In summary, the difference in configuration requirements between Azure and AWS for MongoDB's port 27017 is due to the different default networking setups and policies of each cloud provider. Azure handles this automatically, while AWS requires manual configuration.
+on default sg rule on azure is to allow any internal traffic on your internal network. All devices internal on the inside of your virtual network can talk to each other ragrless of their subnet.
+
+Like the Virtual network is an apartment the subnets are the rooms. Azure can walk between the rooms and talk to each other. On AWS you can't only in the same room.
+
+AWS you need to open the port for internal traffic.
 
 
 

@@ -156,6 +156,30 @@ This behavior is common across cloud platforms like Azure and AWS when creating 
 
 ### The little bit of user data needed to get the app running with the posts page (and what can be commented out if you don't need the posts page to work)
 
-The script above is what is needed to add into the user data section.
+The script below is what is needed to add into the user data section.
+
+```
+#!/bin/bash
+
+export DB_HOST=mongodb://10.0.3.6:27017/posts 
+
+cd ~/tech258-sparta-test-app/app
+
+npm install
+
+pm2 start node app.js 
+```
 
 If you are looking to just get the app working but not the posts page you can comment out the part that sets the environment variable to remove the connection between the two instances.
+
+```
+#!/bin/bash
+
+# export DB_HOST=mongodb://10.0.3.6:27017/posts 
+
+cd ~/tech258-sparta-test-app/app
+
+npm install
+
+pm2 start node app.js 
+```

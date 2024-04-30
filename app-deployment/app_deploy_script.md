@@ -34,16 +34,19 @@ node -v
 echo finished checking node version
 
 # set db_host env var
-export DB_HOST=mongodb://10.0.3.5:27017/posts 
+export DB_HOST=mongodb://10.0.3.4:27017/posts 
 # Private IP goes in there for the database
 # So the app can communicate with the data base specifically using my private IP for my Database, end point to connect to the database
 
 echo getting app folder
-git clone https://github.com/LewisTowart/tech258-sparta-test-app.git
+sudo git clone https://github.com/LewisTowart/tech258-sparta-test-app.git /repo
 echo got app folder
 
+# Can remove slashes to work no matter your starting directory
+# chown /repo/app adminuser
+
 echo going to app folder
-cd ~/tech258-sparta-test-app/app
+cd /repo/app
 echo in app folder
 
 echo installing app

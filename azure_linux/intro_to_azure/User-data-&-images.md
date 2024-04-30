@@ -12,8 +12,9 @@ Some key elements to watch out for are:
 * Make sure to set the correct private IP so that your app can connect with the database
 * You must have a shebang e.g #!/bin/bash at the top of your script to tell the user data what shell to use or it won't run
 * Make sure your script is 100% working as it is much harder to troubleshoot it after having it run through user data
+* User data start within the root directory
 
-Something I want to mention seperately is that all commands will be ran by the root user which means the sudo command isn't needed as it is automatically being used for each command. Having the sudo command in your script won't do anyharm but this is worth noting. The directory that the user data will start from is also / which stands for root. You can take this into account within your script for example I added the line cd ~/ which moves you into the home directory where you can now CD into your app folder.
+Something I want to mention seperately is that all commands will be ran by the root user which means the sudo command isn't needed as it is automatically being used for each command. Having the sudo command in your script won't do anyharm but this is worth noting. The directory that the user data will start from is also / which stands for root. You can take this into account within your script for example I added the line /repo after the clone to clone in the root folder no matter where you are located. Then I used the /repo/app to move into the app folder.
 
 The user data option is available in the advanced tab when creating your virtual machine
 
@@ -27,13 +28,17 @@ If you scroll down from here and tick the user data box, then paste your script 
 
 When you have you instance running setup in the way you want for example my database having mongodb installed and enabled.
 
-You can then go to the overview page for you instace and select capture.
+#### Step 1.
+
+Go to the overview page for you instace and select capture.
 
 You are going to want to select the correct resource group then tick the box that says "No capture only a managed image" I would also select automatically delete vm when finished. You can do this yourself manually later. You want to name it correctly then click create and give it some time to finish setting up. Don't forget to add the owner and value tags with you name.
 
 ![alt text](Markdown_Images/Capture.PNG)
 
 This will take what is essentially a snapshot of everything that you have installed on the instance through the use of the script. For example my database image will boot up with mongo db already installed and enabled (running) ready to go.
+
+#### Step 2.
 
 When creating your virtual machine you need to select your newly created image.
 

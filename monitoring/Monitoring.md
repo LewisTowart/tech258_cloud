@@ -1,4 +1,4 @@
-# Monitoring, Alert Management and Autoscaling
+# Monitoring and Alert Management
 
 ### Worst case to Best case
 

@@ -23,7 +23,7 @@ Better case:
 
 Even better case:
 
-* Azure monitor can see if the cpu load is too high (value needs to be set manuallt)
+* Azure monitor can see if the cpu load is too high (value needs to be set manually)
 * Alert will be set off
 * Notifications are sent as a result of the alert
 
@@ -70,13 +70,13 @@ On the overview page associated with you app vm, you can scroll down and select 
 
 ![alt text](Markdown_images/monitor-tab.PNG)
 
-Here you can scroll down and see the default montitoring graphs to show you information about your app.
+Here you can scroll down and see the default monitoring graphs to show you information about your app.
 
 If you select the pin icon on any of those graphs you can add them to your dashboard.
 
 Here you have the option to create a new dashboard, use a previous one and make it private or shared.
 
-Onced it's been created you can add more of the graphs to it, use the edit button to move them around or change their size and click into the individual grpahs to edit them further such as changing time ranges.
+Once it's been created you can add more of the graphs to it, use the edit button to move them around or change their size and click into the individual graphs to edit them further such as changing time ranges.
 
 ![alt text](Markdown_images/dhasboard.PNG)
 
@@ -138,7 +138,7 @@ You can check how this is going by looking at your dashboard.
 
 ![alt text](Markdown_images/cpu-load.png)
 
-Now your alert should have been triggered. To confirm this you will receieve an email similar to the one below.
+Now your alert should have been triggered. To confirm this you will receive an email similar to the one below.
 
 ![alt text](Markdown_images/email-alert.PNG)
 

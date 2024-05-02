@@ -150,3 +150,9 @@ Through the settings we selected earlier we can test out instance health.
 If you stop and restart one of our virtual machines the app will no longer be running as the user data only runs once. Here we can now see the health of our instance will say unhealthy. This is because now that the app is no longer running the load balancer can no longer send traffic towards that virtual machine.
 
 Our automatic repair option after 10 minutes grace period of our instance being unhealthy will delete it and replace it with a fresh new virtual machine.
+
+#### Re-Image and Upgrade
+
+If you re-image one of your virtual machines it will use a fresh image in it's original state without the user data.
+
+If you upgrade your image it will use the newest version of your image including any user data you may have changed.

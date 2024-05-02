@@ -72,7 +72,7 @@ Here we are going to start by editing the default subnet.
 
 ![alt text](Markdown_Images/vnet-edit.PNG)
 
-Add the settings in the pic below
+Add the settings in the picture below. We are naming it our public-subnet and inputting a starting address.
 
 ![alt text](Markdown_Images/pub-sub-set.PNG)
 
@@ -80,15 +80,15 @@ Now we need to add another subnet for our DMZ.
 
 ![alt text](Markdown_Images/add-subnet.PNG)
 
-Below are the settings for the DMZ.
+Below are the settings for the DMZ. Similar to the public one we are naming it dmz-subnet and adding the starting address.
 
 ![alt text](Markdown_Images/dmz-sub-set.PNG)
 
-Now again click on add new subnet and this time we are making the private subnet with the settings below. notice box ticked.
+Now again click on add new subnet and this time we are making the private subnet with the settings below. Notice for this one we are ticking the box enable private subnet. This is stopping any outbound requests such as internet use.
 
 ![alt text](Markdown_Images/priv-sub-set.PNG)
 
-Now add you tags and then review the details, click create when you are happy.
+Now add your tags, review the details and click create when you are happy.
 
 ### Step 2.
 
@@ -98,49 +98,51 @@ Start by searching for images.
 
 ![alt text](Markdown_Images/image-search.PNG)
 
-Now use the search filed to find the custom database image
+Now use the search to find the custom database image.
 
 ![alt text](Markdown_Images/select-image.PNG)
 
-Now carry on and select create new VM
+Once you have selected the image, click on create new.
 
-Here you want to make sure to select zone 3 for the database and name it sensibly.
+Here you want to make sure to select zone 3 for the database and name it sensibly. We are placing them in different zones so that if one were to go down it doesn't take all of our instances with it just the one on that zone.
 
 ![alt text](Markdown_Images/db-vm-name.PNG)
 
-Next make sure it is standard B1, add the paired keys we setup previously and select liscense other.
+Next make sure it is standard B1, you have added the paired keys we setup previously and select license other.
 
 ![alt text](Markdown_Images/stand-b1-ssh.PNG)
 
 ![alt text](Markdown_Images/stan-disk.PNG)
 
-For the network settings select priv ip no pub ip and allow ssh for now
+For the network settings select private ip but this time with no public ip. Make sure to allow ssh for now in case we need to update anything, we don't want this option in the future for increased security.
+
+We are removing the need for a public IP as we don't want any traffic going to our database that hasn't passed our new NVA filter.
 
 ![alt text](Markdown_Images/db-net-set.PNG)
 
-Sets tages, review, create
+Don't forget to set your own tags, review your settings and when you're confident select create.
 
 ### Step 3.
 
-searhc image sleect app
+Just like before we are going to search for images but this time select our app and launch a new VM.
 
-Now we need to name our app and launch it in zone 1
+Now we need to name our app something sensible and launch it in Zone 1.
 
 ![alt text](Markdown_Images/app-name.PNG)
 
-same as before size ssh key standrd disk.
+same as the instance before we need to select the right size, use our previous ssh keys and select license other.
 
-Here in the network settings we want it as below pic
+Here in the network settings we want it as below picture. We are selecting our public-subnet and allowing http and ssh traffic.
 
 ![alt text](Markdown_Images/app-net-set.PNG)
 
-now we want user data check ip
+Now we want to add out user data to get the app running and make the link to the database. Make sure to double check the private IP hasn't changed for the Database to use in DB_HOST environment variable.
 
 ![alt text](Markdown_Images/app-userdata.PNG)
 
-tags review create
+As always make sure to set the owner tag, review your settings and select create when you are confident.
 
-can check by going posts page.
+You can check everything has been set up correct by using the app public IP and going to the posts page.
 
 ### Step 4.
 

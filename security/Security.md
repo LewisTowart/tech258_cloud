@@ -2,7 +2,7 @@
 
 ## VPC
 
-![alt text](<Markdown_Images/Public IP.png>)
+![alt text](Markdown_Images/VPC-diagram.png)
 
 DMZ de-militarised zone
 NVA - Network Virtual Appliance

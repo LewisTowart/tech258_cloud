@@ -12,9 +12,9 @@ Now we have our custom images ready to start both the the database and app quick
 
 ![alt text](Markdown_images/azure-scale-set.png)
 
-The virtual machine scale set is going to use our custom image along with our bit of user data needed to get the app running. This scale set is going to create our virtual machines. It will also create 2 by default.
+The virtual machine scale set is going to use our custom image along with our bit of user data needed to get the app running. This scale set is going to create our virtual machines. It will also create 2 by default on start up.
 
-We need to set up the policy for it to do this, it's called a custom autoscale. So we'll start with if average CPU load reaches 75% (looking at all the vms set under the scale set). We're going to have a minimum default setting of 2 virtual machine (so that we always have a backup) and a maximum of 3. They are going to get added to our virtual network in the public subnet we created. This is because it needs to be available to the public they need to be able to access it. We need to put them in different availability zones so that we again increase availability.
+We need to set up the policy for it to do this, it's called a custom autoscale. So we'll start with if average CPU load reaches 75% (looking at all the vms set under the scale set). We're going to have a minimum setting of 2 virtual machine (so that we always have a backup) and a maximum of 3. They are going to get added to our virtual network in the public subnet we created. This is because it needs to be available to the public they need to be able to access it. We need to put them in different availability zones so that we again increase availability.
 
 Now we also need a external facing load balancer to take in incoming traffic and decide which virtual machine is best to sent that traffic to. It's balancing out the load to each virtual machine usually based on their CPU usage.
 

@@ -75,35 +75,65 @@ aws s3 ls
 ## AWS CLI commands
 
 #### Make bucket
+
+```
 aws s3 mb s3://tech258-lewis-first-bucket
+```
 
 #### Check in bucket aws 
+
+```
 aws s3 ls s3://tech258-lewis-first-bucket
+```
 
 #### Copy file into the bucket
+
+```
 aws s3 cp test.txt s3://tech258-lewis-first-bucket 
+```
 
 #### Create text file with this text in it
+
+```
 echo This is the first line in a test file > test.txt
+```
 
 #### Download files from bucket in current directory
+
+```
 aws s3 sync s3://tech258-lewis-first-bucket .
+```
 
 #### Remove file from bucket without asking for confirmation (Dangerous :boom:)
+
+```
 aws s3 rm s3://tech258-lewis-first-bucket/test.txt
+```
 
 #### Delete all files in a bucket without asking for confirmation (Very dangerous :boom:)
+
+```
 aws s3 rm s3://tech258-lewis-first-bucket --recursive
+```
 
 #### Dangerous deletes bucket if there are no files in it :boom:
+
+```
 aws s3 rb s3://tech258-lewis-first-bucket
+```
 
 #### Very dangerous deletes bucket and all file in it :boom:
+
+```
 aws s3 rb s3://tech258-lewis-first-bucket --force
+```
 
 #### Help on s3 commands or a specific one
+
+```
 aws s3 help
 aws s3 rb help
+```
 
 ## Python Boto3 commands
 

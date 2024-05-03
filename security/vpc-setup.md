@@ -188,15 +188,15 @@ Next we want to associate with our public subnet where our app is located.
 
 ### Step 7.
 
-Now we need the nva azure portal to forward ip so go here
+Now we need the nva azure portal to allow IP forwarding so now follow the steps in the picture below.
 
 ![alt text](Markdown_Images/nva-ip-forward.PNG)
 
-now just tick the box
+Here we are to just tick the box that says IP forwarding.
 
 ![alt text](Markdown_Images/tick-box.PNG)
 
-we now need to set the forwarding of ips on the nva vm, so ssh in.
+We now need to enable IP forwarding on the NVA VM, so we are going to ssh in now.
 
 can use command to check
 

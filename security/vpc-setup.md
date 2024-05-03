@@ -1,5 +1,4 @@
-- [Security](#security)
-  - [VPC](#vpc)
+- [Creating a VPC](#creating-a-vpc)
   - [Setting up Secure Architecture](#setting-up-secure-architecture)
     - [Step 1.](#step-1)
     - [Step 2.](#step-2)
@@ -10,9 +9,7 @@
     - [Step 7.](#step-7)
     - [Step 8.](#step-8)
 
-# Security
-
-## VPC
+# Creating a VPC
 
 ![alt text](Markdown_Images/VPC-diagram.png)
 
@@ -22,11 +19,6 @@ NVA - Network Virtual Appliance
 We currently have two VMs one for the database and one for the app. We are going to make the database more private and secure. The app and database are each inside their own subnet. The app is part of the public subnet and the database is part of the private subnet both within our virtual network.
 
 subnet ip from 0 to 255
-
-Public as set to 10.0.2.0/24
-Private as set to 10.0.3.0/24
-
-We are going to make a private subnet as 10.0.4.0/24.
 
 Both our app and database have a couple of security elements currently. One is the network security groups and the other is the network interface card which is responsible for all communications going in and out.
 

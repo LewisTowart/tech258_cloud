@@ -1,3 +1,20 @@
+- [AWS S3 with Python Boto3](#aws-s3-with-python-boto3)
+  - [What is AWS S3?](#what-is-aws-s3)
+  - [Setting up our own S3 bucket](#setting-up-our-own-s3-bucket)
+    - [Step 1.](#step-1)
+  - [AWS CLI commands](#aws-cli-commands)
+      - [Make bucket](#make-bucket)
+      - [Check in bucket aws](#check-in-bucket-aws)
+      - [Copy file into the bucket](#copy-file-into-the-bucket)
+      - [Create text file with this text in it](#create-text-file-with-this-text-in-it)
+      - [Download files from bucket in current directory](#download-files-from-bucket-in-current-directory)
+      - [Remove file from bucket without asking for confirmation (Dangerous :boom:)](#remove-file-from-bucket-without-asking-for-confirmation-dangerous-boom)
+      - [Delete all files in a bucket without asking for confirmation (Very dangerous :boom:)](#delete-all-files-in-a-bucket-without-asking-for-confirmation-very-dangerous-boom)
+      - [Dangerous deletes bucket if there are no files in it :boom:](#dangerous-deletes-bucket-if-there-are-no-files-in-it-boom)
+      - [Very dangerous deletes bucket and all file in it :boom:](#very-dangerous-deletes-bucket-and-all-file-in-it-boom)
+      - [Help on s3 commands or a specific one](#help-on-s3-commands-or-a-specific-one)
+  - [Python Boto3 commands](#python-boto3-commands)
+
 # AWS S3 with Python Boto3
 
 ## What is AWS S3?

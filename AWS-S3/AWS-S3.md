@@ -89,16 +89,16 @@ echo This is the first line in a test file > test.txt
 # download files from bucket in current directory
 aws s3 sync s3://tech258-lewis-first-bucket .
 
-# remove file from bucket without asking for confirmation (dangerous)
+# remove file from bucket without asking for confirmation (Dangerous :boom:)
 aws s3 rm s3://tech258-lewis-first-bucket/test.txt
 
-# delete all files in a bucket without asking for confirmation (Very dangerous :warning:)
+# delete all files in a bucket without asking for confirmation (Very dangerous :boom:)
 aws s3 rm s3://tech258-lewis-first-bucket --recursive
 
-# dangerous deletes bucket if there are no files in it
+# dangerous deletes bucket if there are no files in it :boom:
 aws s3 rb s3://tech258-lewis-first-bucket
 
-# very dangerous deletes bucket and all file in it
+# very dangerous deletes bucket and all file in it :boom:
 aws s3 rb s3://tech258-lewis-first-bucket --force
 
 # help on s3 commands or a specific one
@@ -115,7 +115,20 @@ First we need to install Boto3 by using the below command
 sudo pip install boto3
 ```
 
+Each command need to be made into an executable file.
+
+```
+file-name.py
+```
+
+This new script can be ran with the below command.
+
+```
+python3 file-name.py
+```
+
 List all the S3 buckets 
+
 ```
 import boto3
 
@@ -133,7 +146,7 @@ for bucket in buckets:
     print(bucket)
 ```
 
-Create an S3 bucket (named tech257-ramon-test-boto3 or similar) 
+Create an S3 bucket (named tech258-lewis-test-boto3 or similar) 
 
 ```
 import boto3

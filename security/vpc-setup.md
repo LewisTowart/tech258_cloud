@@ -26,7 +26,7 @@ We have a public address people use to access our virtual machines. Web traffic 
 
 A network security group has rules, it needs to allow http port 80 and ssh port 22 traffic for the app. For the database we only need to allow ssh traffic.
 
-We are going to make stricter rules for our database network security group. We are going to only allow mongodb traffic. The lower the rule priority the higher that priority is. Could do ssh 100 mongodb 101 and a rule to deny everything else.
+We are going to make stricter rules for our database network security group. We are going to only allow mongodb traffic. The lower the rule priority the higher that priority is. Could do ssh then mongodb and then a rule to deny everything else to make sure the subnet doesn't deny ssh and mongodb traffic.
 
 We are also going to create the DMZ subnet. App currently communicates to the database then the database back to the app to create the posts information. We are going to make 10.0.3.0/24 our dmz subnet. 
 
@@ -134,27 +134,27 @@ Now we want to add out user data to get the app running and make the link to the
 
 As always make sure to set the owner tag, review your settings and select create when you are confident.
 
-You can check everything has been set up correct by using the app public IP and going to the posts page.
+You can check everything has been set up correctly by using the app public IP and going to the posts page.
 
 ### Step 4.
 
-Here we are now going to create a new vitural machine. Similar to before search virtual machine select that option. Then select create.
+Here we are now going to create a new virtual machine. Similar to before search virtual machine select that option. Then select create.
 
-Now set out the options as below and add zone 2.
+Now set out the options as below making sure to note the marketplace image of Ubuntu 22.04 and adding availability zone 2.
 
 ![alt text](Markdown_Images/nva-name.PNG)
 
-ssh keys standard and disk
+As before select our paired ssh keys, the correct size standard-B1 and this time with a new virtual machine select security type standard.
 
-Now we need to ste the dmz network
+Now we need to set up our DMZ subnet. So select DMZ subnet and allow shh, this is because we are going to need to access our NVA instance to setup IP forwarding.
 
 ![alt text](Markdown_Images/dmz-net-set.PNG)
 
-set tags and create
+As before don't forget to set your tags up with the owner and your name then when you have review your current setup select create.
 
 ### Step 5.
 
-We want to ssh into our app vm to see how packages are being sent to the database. we can use the ping command.
+We want to ssh into our app vm to see if packages are being sent to the database. The below command send packages to the database to make sure that it is receiving them.
 
 ```
 ping "database private ip"
@@ -164,21 +164,25 @@ ping "database private ip"
 
 ### Step 6.
 
-Here we are going to set a route table similar to before search for route tables on the zure protal slecte that option and now click create.
+Here we are going to set a route table similar to before search for route tables on the Azure portal, select that option and now click create.
 
-name as follows
+Follow our usual naming convention as seen below.
 
 ![alt text](Markdown_Images/route-table-name.PNG)
 
-Wait for it to deploy and go to the resource. now go to the routes section and select add
+Wait for it to deploy and go to the resource. Now go to the routes section and select add.
 
 ![alt text](Markdown_Images/add-routes.PNG)
 
-Name as below and copy the settings. ip to priavte sub net and hop to the private ip to nva
+Name as below and copy the settings. We want our destination IP to be the private subnet as this is our final stop for our traffic and hop to the private IP of the NVA VM as this is where we want out traffic o be filtered through.
+
+![alt text](Markdown_Images/route-table-set.PNG)
+
+Now go to the subnets option as seen in the image below and click associate.
 
 ![alt text](Markdown_Images/subnet-associate.PNG)
 
-Now go to subnets and assoicate the pun subnet
+Next we want to associate with our public subnet where our app is located.
 
 ![alt text](Markdown_Images/associate-subnet.PNG)
 

@@ -14,6 +14,13 @@
       - [Very dangerous deletes bucket and all file in it :boom:](#very-dangerous-deletes-bucket-and-all-file-in-it-boom)
       - [Help on s3 commands or a specific one](#help-on-s3-commands-or-a-specific-one)
   - [Python Boto3 commands](#python-boto3-commands)
+    - [Initial Steps](#initial-steps)
+      - [List all the S3 buckets](#list-all-the-s3-buckets)
+      - [Create an S3 bucket (named tech258-lewis-test-boto3 or similar)](#create-an-s3-bucket-named-tech258-lewis-test-boto3-or-similar)
+      - [Upload data/file to the S3 bucket](#upload-datafile-to-the-s3-bucket)
+      - [Download/retrieve content/file from the S3 bucket](#downloadretrieve-contentfile-from-the-s3-bucket)
+      - [Delete content/file from the S3 bucket](#delete-contentfile-from-the-s3-bucket)
+      - [Delete the bucket](#delete-the-bucket)
 
 # AWS S3 with Python Boto3
 
@@ -154,7 +161,7 @@ aws s3 rb help
 
 ## Python Boto3 commands
 
-Using Python boto3 (separate Python scripts for each)... 
+### Initial Steps
 
 First we need to install Boto3 by using the below command
 
@@ -174,7 +181,7 @@ This new script can be ran with the below command.
 python3 file-name.py
 ```
 
-List all the S3 buckets 
+#### List all the S3 buckets 
 
 ```
 import boto3
@@ -193,7 +200,7 @@ for bucket in buckets:
     print(bucket)
 ```
 
-Create an S3 bucket (named tech258-lewis-test-boto3 or similar) 
+#### Create an S3 bucket (named tech258-lewis-test-boto3 or similar) 
 
 ```
 import boto3
@@ -214,7 +221,7 @@ s3.create_bucket(Bucket=bucket_name, CreateBucketConfiguration={'LocationConstra
 print(f"Bucket '{bucket_name}' created successfully in region '{region}'.")
 ```
 
-Upload data/file to the S3 bucket 
+#### Upload data/file to the S3 bucket 
 
 ```
 import boto3
@@ -237,7 +244,7 @@ s3.upload_file(local_file_path, bucket_name, s3_object_key)
 print(f"File '{local_file_path}' uploaded to bucket '{bucket_name}' as '{s3_obj>
 ```
 
-Download/retrieve content/file from the S3 bucket 
+#### Download/retrieve content/file from the S3 bucket 
 
 ```
 import boto3
@@ -261,7 +268,7 @@ print(f"File '{s3_object_key}' downloaded from bucket '{bucket_name}' to '{local
  
 ```
 
-Delete content/file from the S3 bucket 
+#### Delete content/file from the S3 bucket 
 
 ```
 import boto3
@@ -281,7 +288,7 @@ s3.delete_object(Bucket=bucket_name, Key=s3_object_key)
 print(f"File '{s3_object_key}' deleted from bucket '{bucket_name}'.")
 ```
 
-Delete the bucket 
+#### Delete the bucket 
 
 ```
 import boto3

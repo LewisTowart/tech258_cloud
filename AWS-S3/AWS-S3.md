@@ -290,6 +290,8 @@ print(f"File '{s3_object_key}' deleted from bucket '{bucket_name}'.")
 
 #### Delete the bucket 
 
+I tested this command with a file inside the bucket it won't work. You would need to add a force element to this script.
+
 ```
 import boto3
 

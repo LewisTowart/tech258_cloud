@@ -20,7 +20,8 @@
       - [Upload data/file to the S3 bucket](#upload-datafile-to-the-s3-bucket)
       - [Download/retrieve content/file from the S3 bucket](#downloadretrieve-contentfile-from-the-s3-bucket)
       - [Delete content/file from the S3 bucket](#delete-contentfile-from-the-s3-bucket)
-      - [Delete the bucket](#delete-the-bucket)
+      - [Delete the bucket :boom:](#delete-the-bucket-boom)
+      - [Delete bucket and items in it :boom:](#delete-bucket-and-items-in-it-boom)
 
 # AWS S3 with Python Boto3
 
@@ -288,7 +289,7 @@ s3.delete_object(Bucket=bucket_name, Key=s3_object_key)
 print(f"File '{s3_object_key}' deleted from bucket '{bucket_name}'.")
 ```
 
-#### Delete the bucket 
+#### Delete the bucket :boom:
 
 I tested this command with a file inside the bucket it won't work. You would need to add a force element to this script.
 
@@ -307,7 +308,20 @@ s3.delete_bucket(Bucket=bucket_name)
 print(f"Bucket '{bucket_name}' deleted successfully.")
 ```
 
+#### Delete bucket and items in it :boom:
 
+```
+import boto3
+
+s3 = boto3.resource('s3')
+
+bucket_name = 'tech258-martin-test-boto3'
+
+bucket = s3.Bucket(bucket_name)
+for key in bucket.objects.all():
+    key.delete()
+bucket.delete()
+```
 
 
 

@@ -15,6 +15,7 @@
 ![alt text](Markdown_Images/VPC-diagram.png)
 
 DMZ - Demilitarized Zone
+
 NVA - Network Virtual Appliance
 
 We currently have two VMs one for the database and one for the app. We are going to make the database more private and secure. The app and database are each inside their own subnet. The app is part of the public subnet and the database is part of the private subnet both within our virtual network.
@@ -302,7 +303,7 @@ You can check to see if your posts page is still working which it should be and 
 # Allow all traffic on the loopback interface for incoming traffic
 sudo iptables -A INPUT -i lo -j ACCEPT
 ```
-This command allows all incoming traffic on the loopback interface (`lo`). The loopback interface is a virtual network interface within a computer system that allows communication between different processes running on the same system. It is commonly used for internal communications and network testing. All traffic sent to the loopback interface stays within the system and is not transmitted over any physical network.
+This command allows all incoming traffic on the loopback interface (`lo`). The loopback interface is a virtual network interface within a computer system that *allows communication between different processes running on the same computer* . It is commonly used for internal communications and network testing. All traffic sent to the loopback interface stays within the system and is not transmitted over any physical network. Talk to the machine you're on from the machine.
 
 ```
 # Allow all traffic on the loopback interface for outgoing traffic
@@ -326,7 +327,7 @@ This command allows outgoing traffic that is part of established connections. It
 # Drop incoming traffic that is invalid or not part of any established connection
 sudo iptables -A INPUT -m state --state INVALID -j DROP
 ```
-This command drops incoming traffic that is invalid or not part of any established connection. Invalid packets are those that do not conform to the expected network protocol standards or are otherwise malformed. Dropping such packets helps protect the system from potential attacks or misconfigurations.
+This command drops incoming traffic that is invalid packets or not part of any established connection. Invalid packets are those that do not conform to the expected network protocol standards or are otherwise malformed. Dropping such packets helps protect the system from potential attacks or misconfigurations.
 
 ```
 # Allow incoming SSH traffic for new and established connections
@@ -340,19 +341,19 @@ These commands allow incoming SSH (Secure Shell) traffic for new and established
 # Allow forwarding of TCP traffic from source subnet to destination subnet on port 27017
 sudo iptables -A FORWARD -p tcp -s 10.0.2.0/24 -d 10.0.4.0/24 --destination-port 27017 -m tcp -j ACCEPT
 ```
-This command allows forwarding of TCP traffic from a source subnet (`10.0.2.0/24`) to a destination subnet (`10.0.4.0/24`) on port 27017. It is commonly used in network configurations to allow specific types of traffic between different subnets or network segments.
+This command allows forwarding of TCP traffic from a source subnet (`10.0.2.0/24`) to a destination subnet (`10.0.4.0/24`) on port 27017. It is commonly used in network configurations to allow specific types of traffic between different subnets or network segments. Allowing Mongodb requests to move between the machines.
 
 ```
 # Allow forwarding of ICMP (ping) traffic from source subnet to destination subnet for new and established connections
 sudo iptables -A FORWARD -p icmp -s 10.0.2.0/24 -d 10.0.4.0/24 -m state --state NEW,ESTABLISHED -j ACCEPT
 ```
-This command allows forwarding of ICMP (Internet Control Message Protocol) traffic, commonly used for ping requests, from a source subnet to a destination subnet for new and established connections. ICMP is used for various network diagnostic tasks, including testing the reachability of a host and measuring round-trip times.
+This command allows forwarding of ICMP (Internet Control Message Protocol) traffic, commonly used for *ping requests* , from a source subnet to a destination subnet for new and established connections. ICMP is used for various network diagnostic tasks, including testing the reachability of a host and measuring round-trip times.
 
 ```
 # Set default policy to drop all incoming traffic
 sudo iptables -P INPUT DROP
 ```
-This command sets the default policy for the INPUT chain to drop all incoming traffic that does not match any of the preceding rules. It provides a default level of security by blocking all incoming connections unless explicitly allowed by specific rules.
+This command sets the default policy for the INPUT chain to *drop all incoming traffic that does not match any of the preceding rules* . It provides a default level of security by blocking all incoming connections unless explicitly allowed by specific rules.
 
 ```
 # Set default policy to drop all forwarded traffic

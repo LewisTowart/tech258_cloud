@@ -1,3 +1,16 @@
+- [Monitoring and Alert Management](#monitoring-and-alert-management)
+    - [Worst case to Best case](#worst-case-to-best-case)
+    - [What is an availability set? How do they work?](#what-is-an-availability-set-how-do-they-work)
+    - [What is an availability zone? Why superior to an availability set?](#what-is-an-availability-zone-why-superior-to-an-availability-set)
+    - [What is a Virtual Machine Scale Set? What type of scaling does it do? How does it work? Limitations?](#what-is-a-virtual-machine-scale-set-what-type-of-scaling-does-it-do-how-does-it-work-limitations)
+    - [Setting up a Dashboard](#setting-up-a-dashboard)
+    - [Setting up Alerts](#setting-up-alerts)
+      - [Step 1.](#step-1)
+      - [Step 2.](#step-2)
+      - [Step 3.](#step-3)
+    - [Testing Your Alert](#testing-your-alert)
+      - [Testing for Autoscaling](#testing-for-autoscaling)
+
 # Monitoring and Alert Management
 
 ### Worst case to Best case

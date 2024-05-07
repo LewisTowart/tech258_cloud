@@ -1,3 +1,19 @@
+- [Autoscaling](#autoscaling)
+    - [Using a Azure VM Scale set](#using-a-azure-vm-scale-set)
+    - [Creating a Scale set for my App](#creating-a-scale-set-for-my-app)
+      - [Step 1.](#step-1)
+      - [Step 2.](#step-2)
+      - [Step 3.](#step-3)
+      - [Step 4.](#step-4)
+      - [Step 5.](#step-5)
+      - [Step 6.](#step-6)
+      - [Step 7.](#step-7)
+    - [How to ssh into your VM](#how-to-ssh-into-your-vm)
+    - [Load Balancer](#load-balancer)
+    - [How to Clean Up you Autoscaling Group](#how-to-clean-up-you-autoscaling-group)
+    - [Virtual Machine Health](#virtual-machine-health)
+    - [Re-Image and Upgrade](#re-image-and-upgrade)
+
 # Autoscaling
 
 To create this our base image was one from the marketplace Ubuntu 22.04 which we used to create our VM. We then prepared the VM to be ready to run the app.

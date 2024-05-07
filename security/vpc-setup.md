@@ -41,8 +41,6 @@ If set up correctly nothing can access our database from the outside.
 
 Our network security interface needs IP forwarding enabled on Azure portal. IP forwarding also needs to be enabled on the linux OS on our NVA VM. We are going to use IP table for our firewall settings in linux on our NVA.
 
-color for things such as safe traffic and potentially not safe. route from app to nva to db is safe so green. Unsafe to public ip is unsafe
-
 ## Setting up Secure Architecture
 
 ### Step 1.

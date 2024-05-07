@@ -8,6 +8,7 @@
     - [Step 6.](#step-6)
     - [Step 7.](#step-7)
     - [Step 8.](#step-8)
+  - [Detailed Explanation of the IP Table Script](#detailed-explanation-of-the-ip-table-script)
 
 # Creating a VPC
 
@@ -246,45 +247,37 @@ Now past the below script into this new file.
  
 echo "Configuring iptables..."
  
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+# Allow all traffic on the loopback interface for incoming traffic
 sudo iptables -A INPUT -i lo -j ACCEPT
+# Allow all traffic on the loopback interface for outgoing traffic
 sudo iptables -A OUTPUT -o lo -j ACCEPT
- 
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+
+# Allow incoming traffic that is part of established or related connections
 sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
- 
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+
+# Allow outgoing traffic that is part of established connections
 sudo iptables -A OUTPUT -m state --state ESTABLISHED -j ACCEPT
- 
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+
+# Drop incoming traffic that is invalid or not part of any established connection
 sudo iptables -A INPUT -m state --state INVALID -j DROP
- 
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+
+# Allow incoming SSH traffic for new and established connections
 sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+# Allow outgoing SSH traffic for established connections
 sudo iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
- 
-# uncomment the following lines if want allow SSH into NVA only through the public subnet (app VM as a jumpbox)
-# this must be done once the NVA's public IP address is removed
-#sudo iptables -A INPUT -p tcp -s 10.0.2.0/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
-#sudo iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
- 
-# uncomment the following lines if want allow SSH to other servers using the NVA as a jumpbox
-# if need to make outgoing SSH connections with other servers from NVA
-#sudo iptables -A OUTPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
-#sudo iptables -A INPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT
- 
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+
+# Allow forwarding of TCP traffic from source subnet to destination subnet on port 27017
 sudo iptables -A FORWARD -p tcp -s 10.0.2.0/24 -d 10.0.4.0/24 --destination-port 27017 -m tcp -j ACCEPT
- 
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+
+# Allow forwarding of ICMP (ping) traffic from source subnet to destination subnet for new and established connections
 sudo iptables -A FORWARD -p icmp -s 10.0.2.0/24 -d 10.0.4.0/24 -m state --state NEW,ESTABLISHED -j ACCEPT
- 
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+
+# Set default policy to drop all incoming traffic
 sudo iptables -P INPUT DROP
- 
-# ADD COMMENT ABOUT WHAT THE FOLLOWING COMMAND(S) DO
+
+# Set default policy to drop all forwarded traffic
 sudo iptables -P FORWARD DROP
- 
+
 echo "Done!"
 echo ""
  
@@ -300,10 +293,76 @@ echo ""
 Now we need to run this script, I like to use the command below
 
 ```
-bash ip-table-config-sh
+bash ip-table-config.sh
 ```
 
 You can check to see if your posts page is still working which it should be and if you're still ssh'd into you app the ping should be running again.
+
+## Detailed Explanation of the IP Table Script
+
+Certainly! Here's a more detailed explanation for each command in the script:
+
+```
+# Allow all traffic on the loopback interface for incoming traffic
+sudo iptables -A INPUT -i lo -j ACCEPT
+```
+This command allows all incoming traffic on the loopback interface (`lo`). The loopback interface is a virtual network interface within a computer system that allows communication between different processes running on the same system. It is commonly used for internal communications and network testing. All traffic sent to the loopback interface stays within the system and is not transmitted over any physical network.
+
+```
+# Allow all traffic on the loopback interface for outgoing traffic
+sudo iptables -A OUTPUT -o lo -j ACCEPT
+```
+This command allows all outgoing traffic on the loopback interface (`lo`). Similar to the previous command, it enables communication between different processes running on the same system.
+
+```
+# Allow incoming traffic that is part of established or related connections
+sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+```
+This command allows incoming traffic that is part of established or related connections. Established connections are those that have already been initiated and are ongoing. Related connections are those that are related to established connections, such as FTP data connections related to an FTP control connection.
+
+```
+# Allow outgoing traffic that is part of established connections
+sudo iptables -A OUTPUT -m state --state ESTABLISHED -j ACCEPT
+```
+This command allows outgoing traffic that is part of established connections. It ensures that responses to outgoing requests (e.g., web pages requested by a web browser) are allowed to return to the system.
+
+```
+# Drop incoming traffic that is invalid or not part of any established connection
+sudo iptables -A INPUT -m state --state INVALID -j DROP
+```
+This command drops incoming traffic that is invalid or not part of any established connection. Invalid packets are those that do not conform to the expected network protocol standards or are otherwise malformed. Dropping such packets helps protect the system from potential attacks or misconfigurations.
+
+```
+# Allow incoming SSH traffic for new and established connections
+sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+# Allow outgoing SSH traffic for established connections
+sudo iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+```
+These commands allow incoming SSH (Secure Shell) traffic for new and established connections on port 22. SSH is a network protocol used for secure remote access to systems. The first command allows incoming SSH traffic, while the second command allows outgoing SSH traffic. Both commands specify the use of the TCP protocol and match packets based on their source or destination port and connection state.
+
+```
+# Allow forwarding of TCP traffic from source subnet to destination subnet on port 27017
+sudo iptables -A FORWARD -p tcp -s 10.0.2.0/24 -d 10.0.4.0/24 --destination-port 27017 -m tcp -j ACCEPT
+```
+This command allows forwarding of TCP traffic from a source subnet (`10.0.2.0/24`) to a destination subnet (`10.0.4.0/24`) on port 27017. It is commonly used in network configurations to allow specific types of traffic between different subnets or network segments.
+
+```
+# Allow forwarding of ICMP (ping) traffic from source subnet to destination subnet for new and established connections
+sudo iptables -A FORWARD -p icmp -s 10.0.2.0/24 -d 10.0.4.0/24 -m state --state NEW,ESTABLISHED -j ACCEPT
+```
+This command allows forwarding of ICMP (Internet Control Message Protocol) traffic, commonly used for ping requests, from a source subnet to a destination subnet for new and established connections. ICMP is used for various network diagnostic tasks, including testing the reachability of a host and measuring round-trip times.
+
+```
+# Set default policy to drop all incoming traffic
+sudo iptables -P INPUT DROP
+```
+This command sets the default policy for the INPUT chain to drop all incoming traffic that does not match any of the preceding rules. It provides a default level of security by blocking all incoming connections unless explicitly allowed by specific rules.
+
+```
+# Set default policy to drop all forwarded traffic
+sudo iptables -P FORWARD DROP
+```
+This command sets the default policy for the FORWARD chain to drop all forwarded traffic that does not match any of the preceding rules. It helps prevent unauthorized or malicious traffic from being forwarded between different network segments.
 
 
 

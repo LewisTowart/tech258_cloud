@@ -93,7 +93,7 @@ Now move over to the health tab. Here we are going to select enable application 
 
 ![alt text](Markdown_images/health.PNG)
 
-### Step 7.
+#### Step 7.
 
 We now want to navigate over to the advanced tab to add our user data.
 
@@ -105,7 +105,7 @@ Finally before we review we need to add our owner tag as seen below
 
 Before we create make sure all settings are as they should be then you are good to go.
 
-#### How to ssh into your VM
+### How to ssh into your VM
 
 Now to ssh into our VM we are going to have to use a slightly different command than usual.
 
@@ -127,7 +127,7 @@ It will also not take a request from an internal private key as it has been setu
 ssh -i <private key path> -p 50000 adminuser@4.159.36.237
 ```
 
-#### Load Balancer
+### Load Balancer
 
 A load balancer is responsible for a task similar to it's name. It will balance the traffic accessing our virtual machines app between all of the active virtual machines. If the average CPU load between the virtual machines reaches 75% this is when our autoscaling group will create another virtual machine.
 
@@ -135,7 +135,7 @@ The load balancer will consistently send the outside public internet traffic to 
 
 All traffic needs to go through the load balancer so that it can redirect it evenly to each virtual machine.
 
-#### How to Clean Up you Autoscaling Group
+### How to Clean Up you Autoscaling Group
 
 The easiest way that I have found assuming you have been using the correct name convention is to go to the resource group you are a part of, mine being Tech258.
 
@@ -143,7 +143,7 @@ You can then search for your name which should be associated with everything you
 
 Make sure not to delete your Virtual network, ssh key, security groups and images. These will be reused throughout our course.
 
-#### Virtual Machine Health
+### Virtual Machine Health
 
 Through the settings we selected earlier we can test out instance health.
 
@@ -151,7 +151,7 @@ If you stop and restart one of our virtual machines the app will no longer be ru
 
 Our automatic repair option after 10 minutes grace period of our instance being unhealthy will delete it and replace it with a fresh new virtual machine.
 
-#### Re-Image and Upgrade
+### Re-Image and Upgrade
 
 If you re-image one of your virtual machines it will use a fresh image in it's original state without the user data.
 

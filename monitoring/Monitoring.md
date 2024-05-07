@@ -84,7 +84,7 @@ Once it's been created you can add more of the graphs to it, use the edit button
 
 Here we are going to setup an example alert for our app.
 
-### Step 1.
+#### Step 1.
 
 You first need to make sure your app vm is running and is working as you would expect.
 
@@ -94,7 +94,7 @@ If you scroll down on the left hand menu you will see an option that says alerts
 
 ![alt text](Markdown_images/alert-option-create.PNG)
 
-### Step 2.
+#### Step 2.
 
 Select your signal, this means what area are you looking to monitor. In our case it's the CPU usage.
 
@@ -102,7 +102,7 @@ We want to set out alert for maximum aggregation type as we are looking at the m
 
 ![alt text](Markdown_images/alert-set.PNG)
 
-### Step 3.
+#### Step 3.
 
 Now you want to set an action group to group this rule into for later use. Give the action a sensible display name. Finally add the email you want the notification sent to if the alert is triggered.
 
@@ -114,7 +114,7 @@ You can move over to the details tab to add some additional info and give the al
 
 Don't forget to add the usual owner and name tags.
 
-# Testing Your Alert
+### Testing Your Alert
 
 First you want to ssh into your app vm.
 
@@ -149,4 +149,14 @@ You can also go to the alerts section on your app vm and should see that it has 
 If the CPU in this case returns to a normal value less than earlier specified you will also be notified.
 
 ![alt text](Markdown_images/alert-resolved.PNG)
+
+#### Testing for Autoscaling
+
+These steps can be a fantastic way to test you instance to see what times it may be reaching a CPU load that is detrimental to the user experience or what exact percentage that would be.
+
+I could continue by using Apache to test at what point the app instance stops working all together or at what percentage CPU load causes the app page to load slowly. These are all aspects that need to be tested to ensure the best user experience.
+
+I can then use these numbers within my Azure scale set to make sure that before we reach the point of the user experience worsening I can set a value that if the average were exceeded a new app VM would be created.
+
+
 

@@ -14,7 +14,7 @@
 
 ![alt text](Markdown_Images/VPC-diagram.png)
 
-DMZ de-militarised zone
+DMZ - Demilitarized Zone
 NVA - Network Virtual Appliance
 
 We currently have two VMs one for the database and one for the app. We are going to make the database more private and secure. The app and database are each inside their own subnet. The app is part of the public subnet and the database is part of the private subnet both within our virtual network.

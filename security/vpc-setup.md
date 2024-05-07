@@ -300,8 +300,6 @@ You can check to see if your posts page is still working which it should be and 
 
 ## Detailed Explanation of the IP Table Script
 
-Certainly! Here's a more detailed explanation for each command in the script:
-
 ```
 # Allow all traffic on the loopback interface for incoming traffic
 sudo iptables -A INPUT -i lo -j ACCEPT
